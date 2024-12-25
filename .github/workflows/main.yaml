@@ -38,10 +38,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: kursinis.tex
+      - name: Prepare dist directory
+        run: mv kursinis.pdf dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/kursinis.pdf
+          path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     environment:
