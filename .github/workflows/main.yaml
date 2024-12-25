@@ -34,7 +34,7 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-     - name: Compile LaTeX document
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: kursinis.tex
