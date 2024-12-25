@@ -1,7 +1,7 @@
 NAME:=kursinis
 TEX_NAME:=$(NAME).tex
 PDF_NAME:=$(NAME).pdf
-LATEXMK_BASE_FLAGS:= -emulate-aux-dir -aux-directory=out
+LATEXMK_BASE_FLAGS:=-pdf -file-line-error -emulate-aux-dir -aux-directory=out
 
 .PHONY: pdf
 pdf:
