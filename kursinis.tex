@@ -13,9 +13,9 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage[
-	backend=biber,
-	style=numeric,
-	sorting=ynt
+    backend=biber,
+    style=numeric,
+    sorting=ynt
 ]{biblatex}
 \usepackage{algorithm,algorithmic}
 \usepackage{caption}
@@ -23,8 +23,11 @@
 
 \usepackage{biblatex}
 \usepackage{hyperref}
+\usepackage{tikz}
 
+\usetikzlibrary{arrows.meta, positioning}
 \addbibresource{zotero.bib}
+\captionsetup{justification=centering}
 
 \usetheme{Madrid}
 
@@ -36,13 +39,11 @@
 %% Darbo vadovas
 \addtobeamertemplate{author}{}{Darbo vadovas: prof. dr. Olga Kurasova\par}
 
-
 \setbeamertemplate{navigation symbols}{}
 \titlegraphic{\includegraphics[width=2cm]{resources/MIF.png}}
 
 \usepackage{VUMIF}
 \usepackage[T1]{fontenc}
-
 
 \begin{document}
 
@@ -50,6 +51,7 @@
     \titlepage
 \end{frame}
 
+\section{Kenkėjiškų programų aptikimas}
 \begin{frame}
     \frametitle{Kenkėjiškų programų aptikimas}
     \begin{center}
@@ -64,6 +66,7 @@
     \end{itemize}
 \end{frame}
 
+\section{Varžymosi principais grįstos atakos}
 \begin{frame}
     \frametitle{Varžymosi principais grįstos atakos}
     \framesubtitle{\textit{Adversarial Attacks}}
@@ -77,17 +80,31 @@
         \end{small}
     \end{figure}\pause
 
-    \begin{figure}
-        \begin{small}
-            \begin{center}
-                \includegraphics[width=0.60\textwidth]{resources/adversarial_example.png}
-            \end{center}
-            \caption{Sėkminga ataka \cite{AdversarialImagesAttacks}}
-            \label{fig:adversarial_example}
-        \end{small}
-    \end{figure}
-    
-    
+    \vspace{-10pt}
+
+    \begin{columns}[b]
+        \column{0.5\textwidth}
+        \begin{figure}
+            \begin{small}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{resources/adversarial_example.png}
+                \end{center}
+                \caption{Sėkminga ataka \cite{AdversarialImagesAttacks}}
+                \label{fig:adversarial_example}
+            \end{small}
+        \end{figure} \pause
+
+        \column{0.5\textwidth}
+        \begin{figure}
+            \begin{small}
+                \begin{center}
+                    \includegraphics[width=\textwidth]{resources/malware_adversarial.png}
+                \end{center}
+                \caption{Atakos kenkėjiškų programų kontekste}
+                \label{fig:malware_adversarial}
+            \end{small}
+        \end{figure}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -97,7 +114,6 @@
 \begin{frame}
     \frametitle{Karkasų vertinimas}
 \end{frame}
-
 
 \section{Literatūros šaltiniai}
 \begin{frame}[t,allowframebreaks]
