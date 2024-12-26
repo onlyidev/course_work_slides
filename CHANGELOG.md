@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/onlyidev/course_work_slides/compare/v1.0.0...v1.1.0) (2024-12-26)
+
+
+### Features
+
+* **slides:** :sparkles: update bibliography and add new slides on malware detection and adversarial attacks ([28fa0a4](https://github.com/onlyidev/course_work_slides/commit/28fa0a4ee283a98d0f252189a641d4bb02b01bb9))
+* **slides:** Add new section on competition-based attacks and objectives ([e0af951](https://github.com/onlyidev/course_work_slides/commit/e0af951930fa7f86c1909f4b25e5be3226a27c42))
+
+
+### Bug Fixes
+
+* **slides:** Add explainer for malware context in adversarial attack section. ([80dbe4f](https://github.com/onlyidev/course_work_slides/commit/80dbe4fe57636839dc5d48fa54e2894d540e7302))
+
 ## [1.0.0](https://github.com/onlyidev/course_work_slides/compare/v0.0.0...v1.0.0) (2024-12-25)
 
 
