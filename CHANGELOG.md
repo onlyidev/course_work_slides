@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/onlyidev/course_work_slides/compare/v1.1.0...v1.1.1) (2024-12-26)
+
+
+### Bug Fixes
+
+* **slides:** :fire: Add enquote command and update title formatting in bibliography ([fa0993f](https://github.com/onlyidev/course_work_slides/commit/fa0993fb9f75b40428d5d6999f0d73c4b0ae1348))
+
 ## [1.1.0](https://github.com/onlyidev/course_work_slides/compare/v1.0.0...v1.1.0) (2024-12-26)
 
 
