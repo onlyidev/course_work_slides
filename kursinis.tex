@@ -10,6 +10,9 @@
 \renewcommand\thefigure{\arabic{figure} pav.}
 \renewcommand\thetable{\arabic{table} lentelė.}
 \newcommand{\enquote}[1]{„#1“}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 \usepackage{graphicx}
 \usepackage{listings}
@@ -24,9 +27,37 @@
 
 \usepackage{biblatex}
 \usepackage{hyperref}
-\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{booktabs}
 
-\usetikzlibrary{arrows.meta, positioning}
+
+\sisetup{
+    output-decimal-marker = {,}
+}
+
+\newenvironment{criteriaTable}{
+    \newcommand{\rowLast}[1]{##1}
+    \newcommand{\row}[1]{##1 \\}
+    \newcommand{\tbl}[1]{\gdef\Table{##1}}
+
+    \def\Table{}
+}{
+    \begin{table}[h]
+        \centering
+        % \caption{Karkasų vertinimas pagal kriterijus. Karkasai surikiuoti pagal įvertinimą mažėjančia tvarka.}\label{tab:criteria}
+        \begin{tabular}{l|c|c|c|S}
+            \row{
+            \textbf{Karkasas} & 
+            \textbf{K-1}      & 
+            \textbf{K-2}      & 
+            \textbf{K-3}      & 
+                \textbf{K-4}
+            } \midrule
+            \Table{}
+        \end{tabular}
+    \end{table}
+}
+
 \addbibresource{zotero.bib}
 \captionsetup{justification=centering}
 
@@ -116,7 +147,7 @@
     \begin{enumerate}
         \item \textbf{Baltos dėžės} atvejis.
         \item \textbf{Juodos dėžės su pasitikėjimo įverčiu} atvejis.
-        \item \textbf{Juodos dėžės} atvejis: kenkėjiško kodo kūrėjas gali tik testuoti modelį. Atsakymo forma yra tik klasifikacija.
+        \item \underline{\textbf{Juodos dėžės} atvejis:} kenkėjiško kodo kūrėjas gali tik testuoti modelį. Atsakymo forma yra tik klasifikacija.
     \end{enumerate} \pause
     \vspace{10pt}
 
@@ -135,10 +166,65 @@
 
 \begin{frame}
     \frametitle{Karkasai}
+    \framesubtitle{Frameworks}
+    Karkaso sudedamosios dalys:
+    \begin{itemize}
+        \item ML modelio tipas ir architektūra, \pause
+        \item surogatinio modelio (jei naudojamas) tipas ir architektūra, \pause
+        \item ML modelio naudojami požymiai, \pause
+        \item ML modelio naudojamos perturbacijos.
+    \end{itemize}\pause
+    \vspace{20pt}
+    \begin{columns}[t]
+        \column{0.4\textwidth}
+        \centering{Generatyvinių priešiškų tinklų karkasai}
+        \vspace{10pt}
+        \begin{itemize}
+            \item \textit{MalGAN}
+            \item \textit{N-gram MalGAN}
+            \item \textit{MalFox}
+        \end{itemize}\pause
+        \column{0.3\textwidth}
+        \centering{Skatinamojo mokymosi karkasai}
+        \vspace{10pt}
+        \begin{itemize}
+            \item \textit{DQEAF}
+            \item \textit{MalInfo}
+        \end{itemize}\pause
+        \column{0.3\textwidth}
+        \centering{Genetinių algoritmų karkasai}
+        \vspace{10pt}
+        \begin{itemize}
+            \item \textit{AIMED}
+            \item \textit{GAMMA}
+        \end{itemize}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{Karkasų vertinimas}
+    \begin{enumerate}[K-1.]
+        \item Karkasas pritaikytas \enquote{juodos dėžės} atvejams (\textbf{kokybinis}).
+        \item Karkasas pritaikytas komerciniams detektoriams (\textbf{kokybinis}).
+        \item Karkasas užtikrina realistišką atakos efektyvumo įvertinimą -- naudoja
+              surogatinį modelį (\textbf{kokybinis}).
+        \item Karkasas užtikrina atakos efektyvumą (\textbf{kiekybinis}).
+    \end{enumerate}\pause
+
+    \begin{criteriaTable}
+        % \begin{tabular}{cols}
+        \tbl{
+            \row{ \textit{MalFox}        & \cmark{} & \cmark{} & \cmark{} & 56,00 \;\%}
+            \row{ \textit{MalInfo}       & \cmark{} & \cmark{} & \xmark{} & 59,40 \;\%}
+            \row{ \textit{AIMED}         & \cmark{} & \cmark{} & \xmark{} & 47,98 \;\%}
+            \row{ \textit{N}-gram MalGAN & \cmark{} & \xmark{} & \cmark{} & 88,58 \;\%}
+            \row{ \textit{MalGAN}        & \cmark{} & \xmark{} & \cmark{} & 81,00 \;\%}
+            \row{ \textit{GAMMA}         & \cmark{} & \xmark{} & \xmark{} & 53,00 \;\%}
+            \rowLast{ \textit{DQEAF}     & \cmark{} & \xmark{} & \xmark{} & 46,56 \;\%}
+        }
+        % \end{tabular}
+    \end{criteriaTable}
+
 \end{frame}
 
 \section{Literatūros šaltiniai}
