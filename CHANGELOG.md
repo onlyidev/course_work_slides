@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/onlyidev/course_work_slides/compare/v1.1.1...v1.2.0) (2024-12-26)
+
+
+### Features
+
+* **slides:** :sparkle: Add new criteria table and enhance presentation formatting. Only experiment part is left. ([44e09c6](https://github.com/onlyidev/course_work_slides/commit/44e09c6533329d0033001b6a4574a03941521237))
+
 ## [1.1.1](https://github.com/onlyidev/course_work_slides/compare/v1.1.0...v1.1.1) (2024-12-26)
 
 
