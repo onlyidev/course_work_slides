@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/onlyidev/course_work_slides/compare/v1.3.0...v1.4.0) (2025-01-18)
+
+
+### Features
+
+* **slides:** Add enlarged graph for explanations ([486a404](https://github.com/onlyidev/course_work_slides/commit/486a404f70cad98dc9adcdada018e1a134a75b05))
+* **slides:** Added experimental part explanation and references ([e80a7a8](https://github.com/onlyidev/course_work_slides/commit/e80a7a8dff0b2c877802dee1170daa5c49ee8e7a))
+* **slides:** Added formality for results and implicatios ([678bea9](https://github.com/onlyidev/course_work_slides/commit/678bea99e1c82dfad810a8296d7aab1822fe3f27))
+
+
+### Bug Fixes
+
+* **slides:** Added explainer about K-4 ([da82d73](https://github.com/onlyidev/course_work_slides/commit/da82d733e4620d80f534f702738d0265bbe4d637))
+
 ## [1.3.0](https://github.com/onlyidev/course_work_slides/compare/v1.2.0...v1.3.0) (2024-12-27)
 
 
