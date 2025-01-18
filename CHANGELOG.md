@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/onlyidev/course_work_slides/compare/v1.2.0...v1.3.0) (2024-12-27)
+
+
+### Features
+
+* **slides:** :sparkles: Added experiment section. Switched up the order of the slides. ([57b7bc4](https://github.com/onlyidev/course_work_slides/commit/57b7bc44fad236b303cddfea2c5e312a8f2f8fca))
+
 ## [1.2.0](https://github.com/onlyidev/course_work_slides/compare/v1.1.1...v1.2.0) (2024-12-26)
 
 
