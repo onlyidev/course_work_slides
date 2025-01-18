@@ -30,7 +30,6 @@
 \usepackage{siunitx}
 \usepackage{booktabs}
 
-
 \sisetup{
     output-decimal-marker = {,}
 }
@@ -46,15 +45,15 @@
         \centering
         \begin{tabular}{l|c|c|c|S}
             \row{
-                \textbf{Karkasas} & 
-                \textbf{K-1}      & 
-                \textbf{K-2}      & 
-                \textbf{K-3}      & 
+            \textbf{Karkasas} & 
+            \textbf{K-1}      & 
+            \textbf{K-2}      & 
+            \textbf{K-3}      & 
                 \textbf{K-4}*
-                } \midrule
-                \Table{}
-            \end{tabular}
-            % \caption{Karkasų vertinimas pagal kriterijus. Karkasai surikiuoti pagal įvertinimą mažėjančia tvarka.}\label{tab:criteria}
+            } \midrule
+            \Table{}
+        \end{tabular}
+        % \caption{Karkasų vertinimas pagal kriterijus. Karkasai surikiuoti pagal įvertinimą mažėjančia tvarka.}\label{tab:criteria}
     \end{table}
 }
 
@@ -98,9 +97,10 @@
     \end{itemize}
 \end{frame}
 
-\section{Darbo apimtis}
+\section{Tyrimo apimtis}
 \begin{frame}
-    \frametitle{Darbo apimtis}
+    \frametitle{Tyrimo apimtis}
+    \framesubtitle{Scope}
 
     Varžymosi principais grįstos atakos skirstomos į 3 atvejus:
     \begin{enumerate}
@@ -207,7 +207,8 @@
 \begin{frame}
     \frametitle{Karkasų vertinimas}
     \begin{enumerate}[K-1.]
-        \item Karkasas pritaikytas \enquote{juodos dėžės} atvejams (\textbf{kokybinis}).\pause
+        \item Karkasas pritaikytas \enquote{juodos dėžės} atvejams
+              (\textbf{kokybinis}).\pause
         \item Karkasas pritaikytas komerciniams detektoriams (\textbf{kokybinis}).\pause
         \item Karkasas užtikrina realistišką atakos efektyvumo įvertinimą -- naudoja
               surogatinį modelį (\textbf{kokybinis}).\pause
@@ -241,10 +242,48 @@
             \caption{\textit{MalGAN} atakų efektyvumas prieš komercinius detektorius}
         \end{small}
     \end{figure} \pause
-    
-    Vidurkis ($\bar{\mu}$) = 26,85\;\% \pause \\
-    $\implies$ Kriterijų vertinimas adekvatus \pause \\
-    $\implies$ \textit{MalFox} karkasas geriausiai tinka varžymosi principais pagrįstoms atakoms \enquote{juodos dėžės} atvejais
+
+    Vidurkis ($\bar{\mu}$) = 26,85\;\% \pause \\ $\implies$ Kriterijų vertinimas
+    adekvatus \pause \\ $\implies$ \textit{MalFox} karkasas geriausiai tinka
+    varžymosi principais pagrįstoms atakoms \enquote{juodos dėžės} atvejais
+
+\end{frame}
+
+\section{Rezultatai ir išvados}
+\begin{frame}
+    \fontsize{9pt}{10pt}\selectfont
+    \frametitle{Rezultatai ir išvados}
+    \textbf{Rezultatai}
+    \begin{enumerate}
+        \item Išanalizuoti 7 trims kategorijoms (\uppercase{gan}, \uppercase{rl}, \uppercase{ga})
+              priklausantys varžymosi principais pagrįstų atakų karkasai. 
+        \item Jiems apibrėžti vertinimo kriterijai, išskiriantys geriausiai realioms sąlygoms
+              pritaikytus karkasus.
+        \item Atliktas tyrimas, kurio metu K-2 kriterijaus
+              neįgyvendinantis karkasas \textit{MalGAN} naudojamas \uppercase{ae}
+              generavimui prieš komercinius detektorius ir renkami
+              K-4 kriterijų atitinkantys duomenys (t.~y. nustatomas
+              karkaso K-4 kriterijus tokiomis sąlygomis, kai tenkinamas K-2).
+    \end{enumerate}
+
+    \textbf{Išvados}
+    \begin{enumerate}
+        \item Tyrimo metu atlikti 2 eksperimentai parodo, jog net ir padidinus
+              \textit{MalGAN} \uppercase{ml} modelio galimybes (suteikus daugiau kompiuterijos
+              resursų), atakų efektyvumas prieš komercinius detektorius nepadidėja
+              ($\bar{\mu}_{E \text{-} 2} < \bar{\mu}_{E \text{-} 1}$), tačiau yra stabilesnis
+              ($\sigma_{E \text{-} 2} < \sigma_{E \text{-} 1}$).
+        \item Abiem atvejais tyrimo metu gautas K-4 įvertis
+              ($\bar{\mu}$) yra žymiai mažesnis už kriterijų vertinimo metu naudojamą $81,00
+                  \; \%$ \textit{MalGAN} karkaso įvertinimą (kai
+              K-2 netenkinamas). Tai paaiškina vertinimo lentelėje matomas K-4
+              kriterijaus anomalijas ir parodo, jog kriterijai ir karkasų
+              vertinimas yra adekvatūs.
+        \item Laikant, jog parinkti kriterijai ir jų vertinimas yra patikimi, geriausiai iš
+              analizuotų karkasų \enquote{juodos dėžės} atvejams pritaikytas
+              karkasas yra \textit{MalFox}, tenkinantis visus 3 kokybinius
+              kriterijus ir siekiantis $56,00 \; \%$ kiekybinį įvertinimą (atakų efektyvumą).
+    \end{enumerate}
 
 \end{frame}
 
