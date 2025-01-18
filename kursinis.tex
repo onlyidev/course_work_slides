@@ -242,28 +242,43 @@
     \vspace{20pt}
     \begin{enumerate}
         \item \textit{MalGAN} išmokytas naudojant \textit{EMBER} \cite{andersonEMBEROpenDataset2018} duomenų rinkinį. \pause
-        \item Surinkta 100 tikrų kenkėjiškų programų iš \textit{VirusShare} \cite{VirusSharecom}. \pause
-        \item Naudojant \textit{VirusTotal} \cite{VirusTotalHome} -- paslauga, agreguojančia virš 70 komercinių detektorių -- atliktas \textit{MalGAN} K-4 kriterijaus įvertinimas sąlygomis, kai tenkinamas K-2. 
+        \item Surinkta 100 tikrų kenkėjiškų programų iš \textit{VirusShare}
+              \cite{VirusSharecom}. \pause
+        \item Naudojant \textit{VirusTotal} \cite{VirusTotalHome} -- paslauga, agreguojančia
+              virš 70 komercinių detektorių -- atliktas \textit{MalGAN} K-4 kriterijaus
+              įvertinimas sąlygomis, kai tenkinamas K-2. \pause
+              \begin{itemize}
+                \vspace{10pt}
+                  \item Vienos atakos efektyvumas $\mu = \max{\left(\frac{N_{orig} - N_{adv}}{N_{orig}}, 0\right)}$
+              \end{itemize}
     \end{enumerate}
-    
+
 \end{frame}
 
-
 \begin{frame}
-    \frametitle{\textit{MalFox} ir \textit{MalGAN} sąlygų suvienodinimas}
-    \begin{figure}
-        \begin{small}
+    \frametitle{Eksperimentinė dalis}
+    \framesubtitle{\textit{MalFox} ir \textit{MalGAN} sąlygų suvienodinimas}
+    \only<1> {
+        \begin{figure}
             \begin{center}
-                \includegraphics[width=0.5\textwidth]{resources/mu_distribution.png}
+                \includegraphics[width=0.8\textwidth]{resources/mu_distribution.png}
             \end{center}
-            \caption{\textit{MalGAN} atakų efektyvumas prieš komercinius detektorius}
-        \end{small}
-    \end{figure} \pause
+            % \caption{\textit{MalGAN} atakų efektyvumas prieš komercinius detektorius}
+        \end{figure} \pause    
+    }
+    \uncover<2-> {
+        \begin{figure}
+            \begin{small}
+                \begin{center}
+                    \includegraphics[width=0.45\textwidth]{resources/mu_distribution.png}
+                \end{center}
+                \caption{\textit{MalGAN} atakų efektyvumas prieš komercinius detektorius}
+            \end{small}
+        \end{figure} \pause
 
-    Vidurkis ($\bar{\mu}$) = 26,85\;\% \pause \\ $\implies$ Kriterijų vertinimas
-    adekvatus \pause \\ $\implies$ \textit{MalFox} karkasas geriausiai tinka
-    varžymosi principais pagrįstoms atakoms \enquote{juodos dėžės} atvejais
-
+        Vidurkis ($\bar{\mu}$) = 26,85\;\% \pause \\ $\implies$ Kriterijų vertinimas
+        adekvatus \pause \\ $\implies$ \textit{MalFox} karkasas geriausiai tinka
+        varžymosi principais pagrįstoms atakoms \enquote{juodos dėžės} atvejais }
 \end{frame}
 
 \section{Rezultatai ir išvados}
@@ -272,34 +287,32 @@
     \frametitle{Rezultatai ir išvados}
     \textbf{Rezultatai}
     \begin{enumerate}
-        \item Išanalizuoti 7 trims kategorijoms (\uppercase{gan}, \uppercase{rl}, \uppercase{ga})
-              priklausantys varžymosi principais pagrįstų atakų karkasai. 
+        \item Išanalizuoti 7 trims kategorijoms (\uppercase{gan}, \uppercase{rl},
+              \uppercase{ga}) priklausantys varžymosi principais pagrįstų atakų karkasai. 
         \item Jiems apibrėžti vertinimo kriterijai, išskiriantys geriausiai realioms sąlygoms
               pritaikytus karkasus.
-        \item Atliktas tyrimas, kurio metu K-2 kriterijaus
-              neįgyvendinantis karkasas \textit{MalGAN} naudojamas \uppercase{ae}
-              generavimui prieš komercinius detektorius ir renkami
-              K-4 kriterijų atitinkantys duomenys (t.~y. nustatomas
+        \item Atliktas tyrimas, kurio metu K-2 kriterijaus neįgyvendinantis karkasas
+              \textit{MalGAN} naudojamas \uppercase{ae} generavimui prieš komercinius
+              detektorius ir renkami K-4 kriterijų atitinkantys duomenys (t.~y. nustatomas
               karkaso K-4 kriterijus tokiomis sąlygomis, kai tenkinamas K-2).
     \end{enumerate}
 
     \textbf{Išvados}
     \begin{enumerate}
         \item Tyrimo metu atlikti 2 eksperimentai parodo, jog net ir padidinus
-              \textit{MalGAN} \uppercase{ml} modelio galimybes (suteikus daugiau kompiuterijos
-              resursų), atakų efektyvumas prieš komercinius detektorius nepadidėja
-              ($\bar{\mu}_{E \text{-} 2} < \bar{\mu}_{E \text{-} 1}$), tačiau yra stabilesnis
-              ($\sigma_{E \text{-} 2} < \sigma_{E \text{-} 1}$).
-        \item Abiem atvejais tyrimo metu gautas K-4 įvertis
-              ($\bar{\mu}$) yra žymiai mažesnis už kriterijų vertinimo metu naudojamą $81,00
-                  \; \%$ \textit{MalGAN} karkaso įvertinimą (kai
-              K-2 netenkinamas). Tai paaiškina vertinimo lentelėje matomas K-4
-              kriterijaus anomalijas ir parodo, jog kriterijai ir karkasų
-              vertinimas yra adekvatūs.
+              \textit{MalGAN} \uppercase{ml} modelio galimybes (suteikus daugiau
+              kompiuterijos resursų), atakų efektyvumas prieš komercinius detektorius
+              nepadidėja ($\bar{\mu}_{E \text{-} 2} < \bar{\mu}_{E \text{-} 1}$), tačiau yra
+              stabilesnis ($\sigma_{E \text{-} 2} < \sigma_{E \text{-} 1}$).
+        \item Abiem atvejais tyrimo metu gautas K-4 įvertis ($\bar{\mu}$) yra žymiai mažesnis
+              už kriterijų vertinimo metu naudojamą $81,00 \; \%$ \textit{MalGAN} karkaso
+              įvertinimą (kai K-2 netenkinamas). Tai paaiškina vertinimo lentelėje matomas
+              K-4 kriterijaus anomalijas ir parodo, jog kriterijai ir karkasų vertinimas yra
+              adekvatūs.
         \item Laikant, jog parinkti kriterijai ir jų vertinimas yra patikimi, geriausiai iš
-              analizuotų karkasų \enquote{juodos dėžės} atvejams pritaikytas
-              karkasas yra \textit{MalFox}, tenkinantis visus 3 kokybinius
-              kriterijus ir siekiantis $56,00 \; \%$ kiekybinį įvertinimą (atakų efektyvumą).
+              analizuotų karkasų \enquote{juodos dėžės} atvejams pritaikytas karkasas yra
+              \textit{MalFox}, tenkinantis visus 3 kokybinius kriterijus ir siekiantis $56,00
+                  \; \%$ kiekybinį įvertinimą (atakų efektyvumą).
     \end{enumerate}
 
 \end{frame}
