@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/onlyidev/course_work_slides/compare/v1.4.0...v1.4.1) (2025-01-18)
+
+
+### Bug Fixes
+
+* **slides:** :bug: shrink is evil ([1114105](https://github.com/onlyidev/course_work_slides/commit/1114105f4e72fa448f8c80df3adee9c042ce0ddb))
+
 ## [1.4.0](https://github.com/onlyidev/course_work_slides/compare/v1.3.0...v1.4.0) (2025-01-18)
 
 
