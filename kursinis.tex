@@ -204,6 +204,7 @@
 \end{frame}
 
 \section{Karkasų vertinimas}
+
 \begin{frame}
     \frametitle{Karkasų vertinimas}
     \begin{enumerate}[K-1.]
@@ -231,6 +232,22 @@
     \footnotesize{* Atakų efektyvumo ar ekvivalentus įvertis, pateikiamas karkaso straipsnyje}
 
 \end{frame}
+
+\section{Eksperimentinė dalis}
+
+\begin{frame}
+    \frametitle{Eksperimentinė dalis}
+    \framesubtitle{\textit{MalFox} ir \textit{MalGAN} sąlygų suvienodinimas}
+    Koks \textit{MalGAN} efektyvumas, kai šio karkaso sugeneruotas atakas (AE~-~\textit{angl. Adversarial Examples}) naudojame prieš komercinius detektorius? \pause
+    \vspace{20pt}
+    \begin{enumerate}
+        \item \textit{MalGAN} išmokytas naudojant \textit{EMBER} \cite{andersonEMBEROpenDataset2018} duomenų rinkinį. \pause
+        \item Surinkta 100 tikrų kenkėjiškų programų iš \textit{VirusShare} \cite{VirusSharecom}. \pause
+        \item Naudojant \textit{VirusTotal} \cite{VirusTotalHome} -- paslauga, agreguojančia virš 70 komercinių detektorių -- atliktas \textit{MalGAN} K-4 kriterijaus įvertinimas sąlygomis, kai tenkinamas K-2. 
+    \end{enumerate}
+    
+\end{frame}
+
 
 \begin{frame}
     \frametitle{\textit{MalFox} ir \textit{MalGAN} sąlygų suvienodinimas}
@@ -288,7 +305,7 @@
 \end{frame}
 
 \section{Literatūros šaltiniai}
-\begin{frame}[t,allowframebreaks]
+\begin{frame}[t,shrink=20]
     \frametitle{Literatūros šaltiniai}
     \printbibliography
 \end{frame}
