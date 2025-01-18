@@ -40,6 +40,16 @@ jobs:
           root_file: kursinis.tex
       - name: Prepare dist directory
         run: mv kursinis.pdf dist
+      
+      - name: Prepare handout
+        run: echo "\documentclass[12pt,handout]{beamer}" > document.class
+      - name: Compile Handout document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: kursinis.tex
+      - name: Handout to dist
+        run: mv kursinis.pdf dist/handout.pdf
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
