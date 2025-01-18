@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/onlyidev/course_work_slides/compare/v1.4.1...v1.4.2) (2025-01-18)
+
+
+### Bug Fixes
+
+* **slides:** Fixed graph slide in handout mode ([ead202a](https://github.com/onlyidev/course_work_slides/commit/ead202a05f451c80a018d85f17b47ca86dae7d26))
+
 ## [1.4.1](https://github.com/onlyidev/course_work_slides/compare/v1.4.0...v1.4.1) (2025-01-18)
 
 
